@@ -17,7 +17,7 @@ LOCAL_SHARED_LIBRARIES := \
 LOCAL_C_INCLUDES := $(TOP)/hardware/qcom/display/libgralloc \
 LOCAL_CFLAGS := -DLOG_TAG=\"libQcomUI\"
 
-ifneq ($(call is-vendor-board-platform,QCOM),true)
+ifneq ($(BOARD_USES_QCOM_HARDWARE),true)
     LOCAL_CFLAGS += -DNON_QCOM_TARGET
 else
     LOCAL_SHARED_LIBRARIES += libmemalloc
